@@ -1,0 +1,9 @@
+.input-error-msg{
+    color: red;
+    text-align: left;
+    font-size: 15px;
+}
+
+.canvasContainer{
+    overflow-x: scroll;
+}
