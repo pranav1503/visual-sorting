@@ -13,11 +13,13 @@ export default class BubbleCanvas extends Component {
         let max = this.props.max;
         let colorState = this.props.colorState;
         let selColor1 = colorState[0];
-        let selColor2 = colorState[1];        
+        let selColor2 = colorState[1];      
+        let arrLength = colorState[2];        
         let completionPoint = colorState[3];
         let ratio = 230 / max;
+        let startingPoint = (920 - (45*arrLength))/2;
         const ctx = this.refs.canvas.getContext('2d');
-        ctx.clearRect(0,0, 900, 300);
+        ctx.clearRect(0,0, 950, 300);
         ctx.beginPath();
         for(var i=0;i<arr.length;i++){
             let height = ratio*arr[i];
@@ -43,11 +45,11 @@ export default class BubbleCanvas extends Component {
             }
 
             ctx.fillStyle = barColor;
-            ctx.fillRect(20+(45*i), 230, 40, -height);
+            ctx.fillRect(startingPoint+(45*i), 230, 40, -height);
             ctx.font = "20px sans-serif";
             ctx.fillStyle = "black";
             ctx.textAlign = "center";
-            ctx.fillText(arr[i].toString(), 40+(45*i) , textHeight);
+            ctx.fillText(arr[i].toString(), startingPoint+20+(45*i) , textHeight);
         }
         ctx.stroke();
     }

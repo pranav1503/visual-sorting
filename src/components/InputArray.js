@@ -66,7 +66,7 @@ export default class InputArray extends Component {
                     </InputGroup.Prepend>                    
                     <input type="text" className="form-control" onChange={this.getInput}/>
                     <InputGroup.Append>
-                        <Button variant="success" onClick={this.storeInput}>&nbsp;Go&nbsp;</Button>
+                        <Button variant="success" onClick={this.storeInput} disabled={this.props.disBtn}>&nbsp;Go&nbsp;</Button>
                     </InputGroup.Append>
                 </InputGroup>
                 <br />
