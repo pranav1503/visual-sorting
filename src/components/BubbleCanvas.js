@@ -16,6 +16,7 @@ export default class BubbleCanvas extends Component {
         let selColor2 = colorState[1];      
         let arrLength = colorState[2];        
         let completionPoint = colorState[3];
+        let isSwapped = colorState[4];
         let ratio = 230 / max;
         let startingPoint = (920 - (45*arrLength))/2;
         const ctx = this.refs.canvas.getContext('2d');
@@ -29,13 +30,17 @@ export default class BubbleCanvas extends Component {
             }
             let barColor = "#ADD8E6";
             if(selColor1>-1){
-                if(i === selColor1){
+                if(i === selColor1 && !isSwapped){
                     barColor = "green";
+                }else if (i === selColor1 && isSwapped){
+                    barColor = "red";
                 }
             }
             if(selColor2>-1){
-                if(i === selColor2){
+                if(i === selColor2 && !isSwapped){
                     barColor = "green";
+                }else if (i === selColor2 && isSwapped){
+                    barColor = "red";
                 }
             }
             if(completionPoint>-1){

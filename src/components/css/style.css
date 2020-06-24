@@ -7,3 +7,7 @@
 .canvasContainer{
     overflow-x: scroll;
 }
+
+.range-angle{
+    transform: rotateY(180deg);
+}
