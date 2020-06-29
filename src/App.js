@@ -5,7 +5,7 @@ import { BrowserRouter as  Router,Switch,Route } from 'react-router-dom';
 import bubble from './components/Bubble'
 import quick from './components/Quick'
 import insertion from './components/Insertion'
-import merge from './components/Merge'
+import merge from './components/merge/Merge'
 
 function App() {
   return (

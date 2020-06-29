@@ -14,7 +14,8 @@ export default class Bubble extends Component {
             max : 0,
             stateArr : [],
             goBtn : '',
-            speed : 1000,
+            rangeSlide : '',
+            speed : 500,
         }        
         this.getData = this.getData.bind(this);        
         this.sortData = this.sortData.bind(this);
@@ -38,7 +39,8 @@ export default class Bubble extends Component {
     
     sortData(){              
         this.setState({
-            goBtn : 'true'
+            goBtn : 'true',
+            rangeSlide : 'true',
         });         
         if(this.state.arr.length<=0){
             alert("Enter elements to sort.");
@@ -75,9 +77,10 @@ export default class Bubble extends Component {
                                      
             }
             setTimeout(() => {
-                alert("They array is sorted.");
+                // alert("They array is sorted.");
                 this.setState({
                     goBtn : '',
+                    rangeSlide: '',
                     stateArr : [-1,-1,arr1.length,-1,false]
                 });
             }, loop_counter+10);   
@@ -102,8 +105,8 @@ export default class Bubble extends Component {
                     </div>
                     <div className="col-lg-1"><p>Slow</p></div>
                     <div className="col-lg-2">
-                        <div class="form-group">
-                           <input type="range" className="form-control-range range-angle" id="formControlRange" onChange={this.getSpeed} min="500" max="1500"  disabled={this.state.goBtn}/>
+                        <div className="form-group">
+                           <input type="range" className="form-control-range range-angle" id="formControlRange" onChange={this.getSpeed} min="500" max="1500"  disabled={this.state.rangeSlide}/>
                         </div> 
                     </div>
                     <div className="col-lg-1"><p>Fast</p></div>
